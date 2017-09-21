@@ -14,17 +14,21 @@
     <script>
     $('#starttimerbutt').on('click', ()=>{
       $timertime = $('#timertime').val();
-
+      console.log('timer started');
       setTimeout( () => {
-        console.log('timer started')
-        for(let i = 0; i < -1; i++){
-          console.log('red');
-          $('body').css('background-color', 'red')
-          setTimeout(() =>{
-            console.log('blue');
-            $('body').css('background-color', 'blue')
-          }, 10)
-        }
+        console.log('timer over')
+          setInterval(()=>{
+
+            console.log('red');
+            $('body').css('background-color', 'red')
+            setTimeout( () =>{
+              console.log('blue');
+              $('body').css('background-color', 'blue')
+            }, 200)
+
+          }, 200)
+
+
 
       }, $timertime*1000);
 
