@@ -10,6 +10,9 @@
     <p>How logn do you want the timer to last?(seconds)</p>
     <input id = 'timertime'>
     <button id = 'starttimerbutt'>Start Timer</button>
+    <button id = 'startstopwatch'>Start stopwatch</button>
+    <button id = 'endstopwatch'>Stop stopwatch</button>
+    <h2 id = 'stopwatchtime'></h2>
 
     <script>
     $('#starttimerbutt').on('click', ()=>{
@@ -36,6 +39,17 @@
 
     })
 
+
+    $('#startstopwatch').on('click',()=>{
+      time = 0;
+      setInterval(()=>{
+        time++;
+        $('stopwatchtime').text(time);
+
+      }, 1000);
+
+
+    })
 
     </script>
   </body>
