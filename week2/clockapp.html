@@ -7,13 +7,13 @@
     <title></title>
   </head>
   <body>
-    <p>How logn do you want the timer to last?(seconds)</p>
+    <p>How long do you want the timer to last?(seconds)</p>
     <input id = 'timertime'>
     <button id = 'starttimerbutt'>Start Timer</button>
 
     <script>
     $('#starttimerbutt').on('click', ()=>{
-      $timertime = $('#timertime').val();
+      timertime = $('#timertime').val();
 
       setTimeout( () => {
         console.log('timer started')
@@ -26,7 +26,7 @@
           }, 10)
         }
 
-      }, $timertime*1000);
+      }, timertime*1000);
 
 
 
