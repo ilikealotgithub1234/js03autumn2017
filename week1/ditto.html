@@ -8,15 +8,23 @@
     <script>
     const cat1 = { name: "Ditto"};
     const cat2 = { name: "Ditto"};
-    let cat1keys = Object.keys(cat1)
+    let cat1keys = Object.keys(cat1);
     console.log(cat1keys);
-    let cat2keys = Object.keys(cat2)
+    cat1keys = cat1keys + ""
+    let cat2keys = Object.keys(cat2);
     console.log(cat2keys);
-    if (cat1keys === cat2keys && cat1[cat1keys] === cat2[cat2keys]){
-      console.log("true");
+    cat2keys = cat2keys + ""
+    if (cat1keys === cat2keys){
+      console.log("same keys");
+      if( cat1[cat1keys] === cat2[cat2keys]){
+        console.log('same data');
+      }
+      else{
+        console.log("different data");
+      }
     }
     else{
-      console.log(false);
+      console.log("different keys");
     }
 
     </script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>Scramble Eggs</title>
+  </head>
+  <body>
+    <script>
+    let texttotest = '';
+    let scramble = '';
+    let timesofsuccess = 0;
+    testifscramble = () =>{
+      for(let numoftext = 0; numoftext < scramble.length; numoftext++){
+        for(let numofscramble = 0; numofscramble < scramble.length; numofscramble++){
+          if(scramble[numofscramble] === texttotest[numoftext]){
+            console.log('scramble letter number '+ (numofscramble+1) + ' (' + scramble[numofscramble] + ') ' + '= texttotest letter number ' + (numoftext +1) + ' (' + texttotest[numoftext] +') ')
+            timesofsuccess++;
+          }
+          else{
+            console.log('scramble letter number '+ (numofscramble+1) + ' (' + scramble[numofscramble] + ') ' + '!= texttotest letter number ' + (numoftext +1) + ' (' + texttotest[numoftext] +') ')
+
+          }
+        }
+      }
+
+      if(timesofsuccess < texttotest.length){
+        console.log('not a scramble!')
+
+      }
+      else if(timesofsuccess > texttotest.length){
+        console.log('it is a scramble!');
+      }
+    }
+    </script>
+  </body>
+</html>

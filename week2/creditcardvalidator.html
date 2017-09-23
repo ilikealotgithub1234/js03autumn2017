@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  <script>
+  creditcardchecker = (creditcardnum)=>{
+    let finalarray = [];
+    if(creditcardnum.length === 15){// check if odd
+      for(let i = 0; i < 15; i++){
+        if(i % 2 === 1){
+          finalarray[i] = creditcardnum[i];
+        }
+        else if(i % 2 === 0){
+          let creditnum = creditcardnum[i+1]*2;
+          if(creditnum > 9){
+            creditnum - 9;
+            creditcardnum[i+1] = creditnum;
+            finalarray[i+1] = creditnum;
+          }
+        }
+
+      }
+
+
+
+    }
+    if(creditcardnum.length === 16){
+      for(let i = 0; i < 16; i++){
+        if(i % 2 === 0){
+          finalarray[i] = creditcardnum[i];
+        }
+        if(i % 2 === 1){
+          let creditnum = creditcardnum[i+1]*2;
+          if(creditnum > 9){
+            creditnum - 9;
+
+            finalarray[i+1] = creditnum;
+          }
+        }
+      }
+    }
+    if(finalarray[0]+finalarray[1]+finalarray[2]+finalarray[3]+finalarray[4]+finalarray[5]+finalarray[6]+finalarray[7]+finalarray[8]+finalarray[9]+finalarray[10]+finalarray[11]+finalarray[12]+finalarray[13]+finalarray[14]+finalarray[15] % 10 === 0){
+      return true
+    }
+    else{
+      return false;
+    }
+  }
+
+  </script>
+
+</body>
+</html>

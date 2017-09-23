@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <script>
+  var combinations = function (string)
+{
+    var result = [];
+
+    var loop = function (start,depth,prefix)
+    {
+        for(var i=start; i<string.length; i++)
+        //creates a for loop that ends when the string is over
+        {
+            var next = prefix+string[i];
+            if (depth > 0)
+                loop(i+1,depth-1,next);
+            else
+                result.push(next);
+        }
+    }
+
+    for(var i=0; i<string.length; i++)
+    {
+        loop(0,i,'');
+    }
+
+    return result;
+}
+
+  </script>
+  </body>
+</html>
