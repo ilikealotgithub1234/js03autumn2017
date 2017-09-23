@@ -7,7 +7,7 @@
     <title></title>
   </head>
   <body>
-    <p>How logn do you want the timer to last?(seconds)</p>
+    <p>How long do you want the timer to last?(seconds)</p>
     <input id = 'timertime'>
     <button id = 'starttimerbutt'>Start Timer</button>
     <button id = 'startstopwatch'>Start stopwatch</button>
@@ -16,8 +16,13 @@
 
     <script>
     $('#starttimerbutt').on('click', ()=>{
+<<<<<<< HEAD
       $timertime = $('#timertime').val();
       console.log('timer started');
+=======
+      timertime = $('#timertime').val();
+
+>>>>>>> 702e2dee2652766c5fc90b55e2fd8106a4cf2da8
       setTimeout( () => {
         console.log('timer over')
           setInterval(()=>{
@@ -33,7 +38,7 @@
 
 
 
-      }, $timertime*1000);
+      }, timertime*1000);
 
 
 
