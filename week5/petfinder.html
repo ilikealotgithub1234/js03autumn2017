@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <script>
+    $.get( "http://api.petfinder.com/pet.getRandom?format=json&key=03fd26f20b49757549f855c22ca81fc6&output=basic", function( data ) {
+      $( ".result" ).html( data );
+      alert( "Load was performed." );
+      console.log(data);
+      console.log(data.petfinder.pet.options.media.photos.photo[1])
+    });
+
+
+    </script>
+  </body>
+</html>
