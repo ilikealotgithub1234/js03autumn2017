@@ -7,12 +7,22 @@
   </head>
   <body>
     <script>
-    $.get( "http://api.petfinder.com/pet.getRandom?format=json&key=03fd26f20b49757549f855c22ca81fc6&output=basic", function( data ) {
-      $( ".result" ).html( data );
-      alert( "Load was performed." );
-      console.log(data);
-      console.log(data.petfinder.pet.options.media.photos.photo[1])
-    });
+
+    let getpets = (numofpets) =>{
+      for(let i= 0; i < numofpets; i++){
+        $.getJSON( "http://api.petfinder.com/pet.getRandom?format=json&key=03fd26f20b49757549f855c22ca81fc6&callback=?&output=basic", function( data ) {
+          $( ".result" ).html( data );
+          console.log( "Load was performed." );
+          console.log(data);
+          console.log(data.petfinder.pet.media.photos.photo[0].$t)
+          let url = data.petfinder.pet.media.photos.photo[0].$t;
+          $("body").append("</img src = '" + url + "'>")
+
+        });
+
+
+      }
+    }
 
 
     </script>
