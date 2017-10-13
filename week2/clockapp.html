@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p>How long do you want the timer to last?(seconds)</p>
+    <input id = 'timertime'>
+    <button id = 'starttimerbutt'>Start Timer</button>
+    <button id = 'startstopwatch'>Start stopwatch</button>
+    <button id = 'endstopwatch'>Stop stopwatch</button>
+    <h2 id = 'stopwatchtime'></h2>
+
+    <script>
+    $('#starttimerbutt').on('click', ()=>{
+<<<<<<< HEAD
+      $timertime = $('#timertime').val();
+      console.log('timer started');
+=======
+      timertime = $('#timertime').val();
+
+>>>>>>> 702e2dee2652766c5fc90b55e2fd8106a4cf2da8
+      setTimeout( () => {
+        console.log('timer over')
+          setInterval(()=>{
+
+            console.log('red');
+            $('body').css('background-color', 'red')
+            setTimeout( () =>{
+              console.log('blue');
+              $('body').css('background-color', 'blue')
+            }, 200)
+
+          }, 200)
+
+
+
+      }, timertime*1000);
+
+
+
+    })
+
+
+    $('#startstopwatch').on('click',()=>{
+      time = 0;
+      setInterval(()=>{
+        time++;
+        $('stopwatchtime').text(time);
+
+      }, 1000);
+
+
+    })
+''
+    </script>
+  </body>
+</html>

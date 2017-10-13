@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Stat Calculat</title>
+  </head>
+  <body>
+    <script>
+    calculateStats = (array)=>{
+      calculateaverage = (array) =>{
+        let average = 0;
+        let sumforaverage = 0;
+        for(let i = 0; i < array.length; i ++){
+          sumforaverage += array[i];
+        }
+        average = sumforaverage/array.length;
+        console.log("average: " + average);
+      }
+      calculatesmallestandlargest = (array) => {
+        let smallest = Math.min(array);
+        let largest = Math.max(array);
+        console.log("smallest: "+ smallest + " largest: " +largest);
+      }
+      calculateSum = (array)=>{
+        let sum = 0
+        for(let i = 0; i < array.length; i ++){
+          sum += array[i];
+
+        }
+        console.log("sum " + sum);
+      }
+      calculateaverage(array);
+      calculateSum(array);
+      calculatesmallestandlargest(array);
+    }
+    </script>
+  </body>
+</html>
