@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  <script>
+  class Shape{
+    constructor(x,s){
+      this.x = x;
+      this.s = s;
+      console.log(x);
+      console.log("I'm a shape");
+      console.log(s)
+    }
+    static log(x,s){
+      this.s = s
+      console.log("Debugger" + x + s)
+    }
+    static lesser(){
+      console.log('not as much as you expected');
+    }
+  }
+  const shape = new Shape();
+  Shape.log();
+  Shape.lesser();
+  const xshape = new Shape(5);
+  const sxshape = new Shape(4,27) 
+  </script>
+</body>
+</html>
