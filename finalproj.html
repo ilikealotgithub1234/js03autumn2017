@@ -7,16 +7,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
-  </input id = 'email'>
-  </input id = 'password' type = 'password'>
-  </input id = 'submit' type = 'button'>
+  <input id = 'email'></input>
+  <input id = 'password' type = 'password'></input>
+  <button id = 'submit'>Submit</button>
 <script>
 CB.CloudApp.init('kaawhywrbbfp', '57633c65-987a-433c-960c-de0927cc1278');
 $('#button').on('click',()=>{
   let $email = $('#email').val();
   let $password = $('#password').val();
-  obj.set('Email',$email);
-  obj.set('Password',$password);
+  console.log($email)
+  console.log($password)
+
+//  obj.set('Email',$email);
+//  obj.set('Password',$password);
 })
 
 
