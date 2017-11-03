@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+    table{
+      border: thick solid black;
+    }
+    </style>
+  </head>
+  <body>
+  <label for="pokemon-name">Pokémon Name</label>
+	<input type="text" id="pokemon-name" />
+	<button id = ''>PokeTable</button>
+  <ul id = 'pokebilitylist'></ul>
+
+    <script>
+
+    let pokemon = {
+      bulbasaur:{
+        id: 1,
+        name: 'Bulbasaur',
+        type: ['grass','poison']
+      },
+      charamander:{
+        id:4,
+        name: 'Charamander',
+        type: ['fire']
+
+      },
+      squirtle:{
+        id:7,
+        name:'squirtle',
+        type:['water']
+      },
+    };
+
+    $("button").click(function() {
+      let pokerequest = $('#pokemon-name').val()
+      let name = pokerequest;
+      let id = pokemon[pokerequest].id;
+      let type = pokemon[pokerequest].type;
+      console.log(pokerequest)
+        console.log("Name: " + pokerequest + " id: " + pokemon[pokerequest].id + " type: " + pokemon[pokerequest].type);
+        $('body').append(`
+          <table style="width:100%">
+        <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>type</th>
+    </tr>
+    <tr>
+      <td>${id}</td>
+      <td>${name}</td>
+      <td>${type}</td>
+    </tr>
+
+    </table>`)
+  	});
+
+    $.get( "https://pokeapi.co/api/v2/pokemon/23/", ( data ) =>{
+      console.log(data);
+      for(let i = 0; i < data.abilities.length; i++)
+      console.log(data.abilities[i].ability.name)
+      $('#pokebilitylist').append('<li>' + data.abilities[i].ability.name + '</ul>')
+
+  })
+
+
+
+    </script>
+  </body>
+</html>

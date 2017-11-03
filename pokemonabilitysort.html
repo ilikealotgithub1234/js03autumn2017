@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <script>
+    $.get( "https://pokeapi.co/api/v2/ability/127", ( data ) =>{
+      console.log(data);
+      for(let i = 0; i < data.pokemon.length; i++)
+      console.log(data.pokemon[i].pokemon.url)
+      $('#pokebilitylist').append('<li>' + data.abilities[i].ability.name + '</ul>')
+      $.get(data.pokemon[i].pokemon.url, (data) =>{
+        console.log(data)
+
+      })
+
+  })
+
+
+
+    </script>
+  </body>
+</html>
